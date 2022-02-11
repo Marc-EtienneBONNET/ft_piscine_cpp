@@ -6,13 +6,16 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/02/11 16:25:49 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/02/11 16:25:31 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	executable
 
 SRCS			=	srcs/main.cpp\
+					srcs/newZombie.cpp\
+					srcs/randomChump.cpp\
+					srcs/Zombie.cpp\
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 
