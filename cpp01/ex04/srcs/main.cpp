@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+//* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,45 +6,50 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/12 11:09:33 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/12 12:53:57 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/my_define_include.hpp"
 
-
-int	my_replace_s1_by_s2(std::string file, std::string s1, std::string s2)
+int	main(int ac, char **av)
 {
-	std::fstream my_file(file.c_str());
-	std::string str;
-	if (!my_file)
+	std::ifstream		fd_read;
+	std::ofstream		fd_write;
+	std::ostringstream	os;
+	std::string			content;
+	std::string			file;
+	std::string			patterne;
+	std::string			replace;
+	std::size_t			i;
+
+	if (ac != 4 || av[2][0] == '\0')
+	{
+		std::cout << "+ ou - de 3 argument on etait remplis" << std::endl;
+		return (-1);
+	}
+	file = av[1];
+	patterne = av[2];
+	replace = av[3];
+	fd_read.open(file.c_str(), std::ifstream::in);
+	if (!fd_read.is_open())
 	{
 		std::cout << "fichier inexistant" << std::endl;
 		return (-1);
 	}
-	while (my_file >> str)
+	fd_write.open((file+ ".replace").c_str(), std::ifstream::out);
+	os << fd_read.rdbuf();
+	content = os.str();
+	i = content.find(patterne);
+	if (i == std::string::npos)
 	{
-		if (str == s1)
-		{
-			my_file << s2;
-			std::cout << "Occurence : " << str << std::endl;
-			std::cout << s2 << std::endl;
-		}
+		std::cout << "aucune aucurance dans le fichier" << std::endl;
+		return (0);
 	}
-	my_file.close();
-	return (0);
-}
-
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	//(void)av;
-	//if (ac != 4)
-	//{
-	//	std::cout << "+ ou - de 3 argument on etait remplis" << std::endl;
-	//	return (-1);
-	//}
-	my_replace_s1_by_s2(av[1], av[2], av[3]);
+	content.erase(i, patterne.length());
+	content.insert(i, replace);
+	fd_write << content;
+	fd_read.close();
+	fd_write.close();
 	return (0);
 }
