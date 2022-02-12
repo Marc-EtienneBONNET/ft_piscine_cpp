@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_define_include.hpp                              :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/09 16:10:42 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/12 16:55:31 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,27 @@
 # define JAUNE "\e[1;33m"
 # define VIOLET "\e[1;35m"
 # define BLANC "\e[0m"
+
+class Karen;
+
+struct t_message
+{
+	std::string message;
+	void	(Karen::*f)(void);
+};
+
+class Karen
+{
+public:
+	Karen(void);
+	~Karen(void);
+	void	complain(std::string level);
+private:
+	void		debug(void);
+	void		info(void);
+	void		warning(void);
+	void		error(void);
+	t_message	message[4];
+};
 
 #endif
