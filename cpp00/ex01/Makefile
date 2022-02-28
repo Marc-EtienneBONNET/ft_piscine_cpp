@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/02/09 16:20:24 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/02/28 15:20:08 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC				=	clang++
 
 CFLAGS			=	-std=c++98 -Wall -Werror -Wextra -g
 
-.c.o			:
+.cpp.o			:
 					${CC} ${CFLAGS} ${HEAD}  -c $< -o ${<:.cpp=.o} 
 
 $(NAME)			:	${OBJS}
