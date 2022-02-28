@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/15 07:48:45 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:44:04 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ struct t_message
 class Karen
 {
 public:
-	Karen(std::string lvl_min);
+	Karen(void);
 	~Karen(void);
 	void	complain(std::string level);
 private:
@@ -42,8 +42,6 @@ private:
 	void		info(void);
 	void		warning(void);
 	void		error(void);
-	void		my_print(std::string message);
-	std::string	_lvl_min;
 	t_message	message[4];
 	
 };

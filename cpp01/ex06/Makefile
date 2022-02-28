@@ -6,11 +6,11 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/02/12 15:56:21 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/02/28 10:45:31 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	executable
+NAME			=	karenFilter
 
 SRCS			=	srcs/main.cpp\
 					srcs/Karen.cpp\
