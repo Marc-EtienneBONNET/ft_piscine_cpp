@@ -6,13 +6,13 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/02/09 13:30:21 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/02/28 14:00:16 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	megaphone
 
-SRCS			=	main.cpp\
+SRCS			=	megaphone.cpp\
 
 OBJS			=	${addprefix srcs/,${SRCS:.cpp=.o}}
 

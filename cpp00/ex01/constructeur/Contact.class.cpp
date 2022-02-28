@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:41:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/10 11:41:28 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:57:23 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,27 @@ void	Contact::my_modifi_contact(void)
 		std::cout << ROUGE << "Attention ! tout les chant doive etre remplis" << BLANC <<std::endl;
 		if (!this->prenom[0])
 		{
-			std::cout << VIOLET"Le prenom      : "BLANC;
+			std::cout << VIOLET "Le prenom      : " BLANC;
 			std::getline(std::cin, this->prenom);
 		}
 		if (!this->nom[0])
 		{
-			std::cout << VIOLET"Le nom         : "BLANC;
+			std::cout << VIOLET "Le nom         : " BLANC;
 			std::getline(std::cin, this->nom);
 		}
 		if (!this->surnom[0])
 		{
-			std::cout << VIOLET"Le surnom      : "BLANC;
+			std::cout << VIOLET "Le surnom      : " BLANC;
 			std::getline(std::cin, this->surnom);
 		}
 		if (!this->num[0])
 		{
-			std::cout << VIOLET"Le num         : "BLANC;
+			std::cout << VIOLET "Le num         : " BLANC;
 			std::getline(std::cin, this->num);
 		}
 		if (!this->dark_secret[0])
 		{
-			std::cout << VIOLET"Le noir secret : "BLANC;
+			std::cout << VIOLET "Le noir secret : " BLANC;
 			std::getline(std::cin, this->dark_secret);
 		}
 	}

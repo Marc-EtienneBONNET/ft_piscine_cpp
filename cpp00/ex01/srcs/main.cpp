@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/10 11:49:07 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:56:50 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int	main(int ac, char **av)
 	std::string	tmp = "NULL";
 
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-	std::cout << BLEU"\t\t----------------------------------------------------------------------"BLANC <<std::endl;
-	std::cout << BLEU"\t\tBonjour, merci d avoir choisi Papi-Phone pour votre gestion de contact"BLANC << std::endl;
-	std::cout << BLEU"\t\t----------------------------------------------------------------------"BLANC <<std::endl;
-	std::cout << BLEU"\t   \"ADD\" pour ajouter un contact" << " \"SEARCH\" pour chercher un contact" << " \"EXIT\" pour sortir"BLANC << std::endl;
+	std::cout << BLEU "\t\t----------------------------------------------------------------------" BLANC <<std::endl;
+	std::cout << BLEU "\t\tBonjour, merci d avoir choisi Papi-Phone pour votre gestion de contact" BLANC << std::endl;
+	std::cout << BLEU "\t\t----------------------------------------------------------------------" BLANC <<std::endl;
+	std::cout << BLEU "\t   \"ADD\" pour ajouter un contact" << " \"SEARCH\" pour chercher un contact" << " \"EXIT\" pour sortir" BLANC << std::endl;
 	std::cout << std::endl << std::endl;
 	while (tmp != "EXIT")
 	{
-		std::cout << VIOLET"|\tPapi-Phone-->>"BLANC;
+		std::cout << VIOLET "|\tPapi-Phone-->>" BLANC;
 		std::getline(std::cin, tmp);
 		if (tmp == "ADD")
 			PhoneBook.my_ajoue_contact();

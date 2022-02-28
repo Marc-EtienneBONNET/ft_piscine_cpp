@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:18:22 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/10 11:20:40 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:59:15 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	PhoneBook::my_affiche_all_contact(void) const
 	}
 	if (this->nb_contact <= 0)
 		return ;
-	std::cout << VERT"Choisisez l index du contact a checker >"BLANC;
+	std::cout << VERT "Choisisez l index du contact a checker >" BLANC;
 	while (1)
 	{
 		std::getline(std::cin, index_str);
