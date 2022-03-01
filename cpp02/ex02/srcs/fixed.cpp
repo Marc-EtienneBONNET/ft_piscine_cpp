@@ -6,13 +6,13 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:20:09 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/01 18:34:05 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/01 19:35:38 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/my_define_include.hpp"
 
-Fixed::Fixed(void) 
+Fixed::Fixed(void)  
 {
 	this->_nb = 0;
 }
@@ -59,10 +59,42 @@ int	Fixed::toInt(void)const
 	return ((int)(this->_nb) / (1 << this->_nb_bits));
 }
 
-static Fixed &Fixed::min(Fixed const &n1, Fixed const &n2);
+Fixed &Fixed::min(Fixed &n1, Fixed &n2)
+{
+	if (n1.toFloat() < n2.toFloat())
+		return (n1);
+	else
+		return (n2);
+}
 
+Fixed &Fixed::max(Fixed &n1, Fixed &n2)
+{
+	if (n1.toFloat() > n2.toFloat())
+		return (n1);
+	else
+		return (n2);
+}
 
+Fixed Fixed::min(const Fixed &n1, const Fixed &n2)
+{
 
+	Fixed tmp;
+	if (n1.toFloat() < n2.toFloat())
+		tmp = Fixed(n1);
+	else
+		tmp = Fixed(n2);
+	return (tmp);
+}
+
+Fixed Fixed::max(const Fixed &n1, const Fixed &n2)
+{
+	Fixed tmp;
+	if (n1.toFloat() > n2.toFloat())
+		tmp = Fixed(n1);
+	else
+		tmp = Fixed(n2);
+	return (tmp);
+}
 
 Fixed & Fixed::operator=(Fixed const & ori)
 {

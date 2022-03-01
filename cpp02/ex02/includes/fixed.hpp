@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:20:25 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/01 18:33:33 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/01 19:31:45 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ public :
 	void	setRawBits(int const raw);
 	float	toFloat(void)const;
 	int		toInt(void)const;
-	static Fixed &min(Fixed const &n1, Fixed const &n2);
+	static Fixed &min(Fixed &n1, Fixed &n2);
+	static Fixed &max(Fixed &n1, Fixed &n2);
+	static Fixed max(const Fixed &n1, const Fixed &n2);
+	static Fixed min(const Fixed &n1, const Fixed &n2);
 	Fixed & operator=(Fixed const & ori);
 	int operator>(Fixed const & f1) const;
 	int operator<(Fixed const & f1) const;

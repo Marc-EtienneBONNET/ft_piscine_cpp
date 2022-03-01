@@ -4,7 +4,7 @@
 
 int main()
 {
-    Fixed a(10);
+    Fixed a(2);
     Fixed b(3);
     Fixed c;
     
@@ -26,6 +26,8 @@ int main()
     std::cout << "c                    : "<< c << std::endl;
     std::cout << "c--                  : "<< c-- << std::endl;
     std::cout << "c                    : "<< c << std::endl;
+    std::cout << "min(a, b)            : "<< c.min(a,b) << std::endl;
+    std::cout << "max(a, b)            : "<< c.max(a,b) << std::endl;
 
     
     
