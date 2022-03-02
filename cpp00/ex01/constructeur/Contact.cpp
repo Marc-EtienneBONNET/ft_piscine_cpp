@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:41:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/28 13:57:23 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/02 20:44:25 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	Contact::my_affichage_all(int index) const
 {
 	unsigned int x;
 	int y;
-	int	tmp_nb;
 	std::string tmp[4];
 
 	y = 0;
@@ -75,7 +74,6 @@ void	Contact::my_affichage_all(int index) const
 	tmp[0] = this->prenom;
 	tmp[1] = this->nom;
 	tmp[2] = this->surnom;
-	tmp_nb = this->id;
 	x = 9;
 	while (x-- > 0)
 		std::cout << " ";

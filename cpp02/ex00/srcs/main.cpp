@@ -6,11 +6,11 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/01 14:30:47 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/02 20:49:54 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/my_define_include.hpp"
+#include "../includes/Fixed.hpp"
 
 int main( void ) 
 {
