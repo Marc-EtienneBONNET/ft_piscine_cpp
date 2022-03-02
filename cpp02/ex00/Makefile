@@ -6,14 +6,14 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/03/01 13:56:47 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/02 07:14:46 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	executable
 
 SRCS			=	srcs/main.cpp\
-					srcs/fixed.cpp\
+					srcs/Fixed.cpp\
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 

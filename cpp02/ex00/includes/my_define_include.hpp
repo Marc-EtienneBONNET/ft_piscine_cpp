@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/01 13:20:48 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/02 07:14:28 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MY_DEFINE_INCLUDE_H
 # include <iostream>
 # include <string>
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 # define BLEU "\e[1;36m"
 # define BLEU_2 "\e[1;34m"

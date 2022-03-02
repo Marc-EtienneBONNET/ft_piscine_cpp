@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/02 07:13:12 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/02 07:12:01 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <cmath>
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 # define BLEU "\e[1;36m"
 # define BLEU_2 "\e[1;34m"
