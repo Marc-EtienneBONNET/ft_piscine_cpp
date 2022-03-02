@@ -12,7 +12,7 @@
 
 #include "../includes/my_define_include.hpp"
 
-Fixed::Fixed(void)  
+Fixed::Fixed(void)   
 {
 	this->_nb = 0;
 }

@@ -13,7 +13,7 @@
 #include "../includes/my_define_include.hpp"
 
 
-int	main(int ac, char **av)
+int	main(void)
 {
 	PhoneBook	PhoneBook;
 	std::string	tmp = "NULL";

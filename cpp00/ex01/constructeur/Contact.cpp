@@ -65,7 +65,7 @@ void	Contact::my_modifi_contact(void)
 
 void	Contact::my_affichage_all(int index) const
 {
-	int x;
+	unsigned int x;
 	int y;
 	int	tmp_nb;
 	std::string tmp[4];

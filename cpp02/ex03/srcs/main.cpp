@@ -27,23 +27,24 @@ int main( void )
     std::cout << "init copy       y: " << c.getFixed_y().toInt() << std::endl;
 */
 
-    Point v1(5,5);
-    Point v2(10,10);
-    Point v3(5,10);
-    Point p(7,7);
+    Point const a(Fixed(5),Fixed(5));
+    Point const b(Fixed(10),Fixed(10)); 
+    Point const c(Fixed(5),Fixed(10));
+    Point const p(Fixed(6),Fixed(7));
     std::cout << std::endl;
-    std::cout << "v1              x: " << v1.getFixed_x().toInt() << std::endl;
-    std::cout << "v1              y: " << v1.getFixed_y().toInt() << std::endl;
+    std::cout << "a              x: " << a.getFixed_x_test() << std::endl;
+    std::cout << "a              y: " << a.getFixed_y_test() << std::endl;
     std::cout << std::endl;
-    std::cout << "v1              x: " << v2.getFixed_x().toInt() << std::endl;
-    std::cout << "v1              y: " << v2.getFixed_y().toInt() << std::endl;
+    std::cout << "b              x: " << b.getFixed_x_test() << std::endl;
+    std::cout << "b              y: " << b.getFixed_y_test() << std::endl;
     std::cout << std::endl;
-    std::cout << "v1              x: " << v3.getFixed_x().toInt() << std::endl;
-    std::cout << "v1              y: " << v3.getFixed_y().toInt() << std::endl;
+    std::cout << "c              x: " << c.getFixed_x_test() << std::endl;
+    std::cout << "c              y: " << c.getFixed_y_test() << std::endl;
     std::cout << std::endl;
-    std::cout << "p               x: " << p.getFixed_x().toInt() << std::endl;
-    std::cout << "p               y: " << p.getFixed_y().toInt() << std::endl;
-    std::cout << "res              : " << bsp(v1,v2,v3,p);
+    std::cout << "p              x: " << p.getFixed_x_test() << std::endl;
+    std::cout << "p              y: " << p.getFixed_y_test() << std::endl;
+    
+    std::cout << "res              : " << bsp(a,b,c,p);
     
 
 

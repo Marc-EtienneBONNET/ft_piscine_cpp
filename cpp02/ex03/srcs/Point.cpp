@@ -17,15 +17,21 @@ Point::Point(void) : _x(0), _y(0)
 	std::cout << "construction du point par defaux" << std::endl;
 }
 
-Point::Point(const float x, const float y) : _x(x), _y(y) 
+Point::Point(int test)
 {
-	std::cout << "construction du point par init de x et y" << std::endl;
+	this->_test = test;
+	std::cout << "construction du point par defaux" << std::endl;
+}
+
+
+Point::Point(Fixed x, Fixed y) : _x(x), _y(y) 
+{
+	//std::cout << "construction du point par init de x et y" << std::endl;
 }
 
 Point::Point(Point const &ori)
 {
 	*this = ori;
-	std::cout << "construction du point par copie {" << ori.getFixed_x_test() << "}" << std::endl;
 }
 
 Point::~Point(void)
@@ -33,20 +39,25 @@ Point::~Point(void)
 	//std::cout << "Destruction du point" << std::endl;
 }
 
-const Fixed	Point::getFixed_x(void)
+Fixed	Point::getFixed_x(void) const
 {
 	return (this->_x);
 }
 
-const Fixed	Point::getFixed_y(void)
+Fixed	Point::getFixed_y(void) const
 {
-	return (this->_x);
+	return (this->_y);
 
 }
 
-float	Point::getFixed_x_test(void)
+float	Point::getFixed_x_test(void) const
 {
 	return (this->_x.toFloat());
+}
+
+float	Point::getFixed_y_test(void) const
+{
+	return (this->_y.toFloat());
 }
 
 

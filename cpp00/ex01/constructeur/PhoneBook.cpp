@@ -75,7 +75,7 @@ void	PhoneBook::my_affiche_all_contact(void) const
 		std::getline(std::cin, index_str);
 		if (index_str[0] >= '0' && index_str[0] <= '8')
 		{
-			index = std::stoi(index_str);
+			index = index_str[0] - '0';
 			if (index <= 7 && index < this->nb_contact)
 				break ;
 		}

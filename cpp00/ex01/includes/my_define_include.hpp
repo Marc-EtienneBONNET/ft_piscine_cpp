@@ -14,8 +14,8 @@
 # define MY_DEFINE_INCLUDE_H
 # include <iostream>
 # include <string>
-# include "Contact.class.hpp"
-# include "PhoneBook.class.hpp"
+# include "Contact.hpp"
+# include "PhoneBook.hpp"
 
 
 # define BLEU "\e[1;36m"

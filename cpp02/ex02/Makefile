@@ -19,9 +19,9 @@ OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 
 HEAD			=	-I includes/
 
-CC				=	clang++ 
+CC				=	c++ 
 
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra -g
+CFLAGS			=	v
 
 .cpp.o			:
 					${CC} ${CFLAGS} ${HEAD}  -c $< -o ${<:.cpp=.o} 

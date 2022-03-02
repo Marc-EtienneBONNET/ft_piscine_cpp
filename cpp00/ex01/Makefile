@@ -13,16 +13,16 @@
 NAME			=	megaphone
 
 SRCS			=	srcs/main.cpp\
-					constructeur/Contact.class.cpp\
-					constructeur/PhoneBook.class.cpp\
+					constructeur/Contact.cpp\
+					constructeur/PhoneBook.cpp\
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 
 HEAD			=	-I includes/
 
-CC				=	clang++ 
+CC				=	c++ 
 
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra -g
+CFLAGS			=	-std=c++98 -Wall -Wextra -Werror
 
 .cpp.o			:
 					${CC} ${CFLAGS} ${HEAD}  -c $< -o ${<:.cpp=.o} 

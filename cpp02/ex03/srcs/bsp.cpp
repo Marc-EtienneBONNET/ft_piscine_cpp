@@ -12,19 +12,19 @@
 
 #include "../includes/my_define_include.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
+bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Point tmp(b);
 	(void)a;
+	//(void)b;
 	(void)c;
 	(void)point;
-	float droite;
 
-	droite = tmp.getFixed_y().toFloat();
+	//float droite;
+	//droite = tmp.getFixed_y().toFloat();
 	//roite = a.getFixed_x_test();
 	//droite = ((a.getFixed_x().toFloat() - point.getFixed_x().toFloat())*(a.getFixed_y().toFloat() - point.getFixed_y().toFloat()))
 	//droite2 = ((b.getFixed_x().toFloat() - point.getFixed_x().toFloat())*(b.getFixed_y().toFloat() - point.getFixed_y().toFloat()))
 	//droite = (droite - droite2);
-	std::cout << "droite : " << droite << std::endl;
+	std::cout << std::endl << "droite : " << b.getFixed_x_test() << std::endl;
 	return (0);
 }

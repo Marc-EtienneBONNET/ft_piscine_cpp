@@ -23,7 +23,7 @@ HEAD			=	-I includes/
 
 CC				=	clang++ 
 
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra -g
+CFLAGS			=	-std=c++98 -Wall -Wextra -Werror
 
 .cpp.o			:
 					${CC} ${CFLAGS} ${HEAD}  -c $< -o ${<:.cpp=.o} 
