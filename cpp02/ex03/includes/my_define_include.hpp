@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/02 07:12:01 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:47:11 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@
 # define JAUNE "\e[1;33m"
 # define VIOLET "\e[1;35m"
 # define BLANC "\e[0m"
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
