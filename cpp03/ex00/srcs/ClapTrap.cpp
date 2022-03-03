@@ -1,5 +1,16 @@
-#include "../includes/ClapTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 11:28:42 by mbonnet           #+#    #+#             */
+/*   Updated: 2022/03/03 11:28:46 by mbonnet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/ClapTrap.hpp"
 
 //-------------------constructeur 
 ClapTrap::ClapTrap(std::string name) : _nom(name), _pv(10), _en(10), _domage(0)
