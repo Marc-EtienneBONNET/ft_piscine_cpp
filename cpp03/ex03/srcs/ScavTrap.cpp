@@ -6,30 +6,36 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:28:29 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/03 16:44:57 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:30:49 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 #include "../includes/ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+const int    ScavTrap::_defaultPv = 100;
+const int    ScavTrap::_defaultEn = 50;
+const int    ScavTrap::_defaultDomage = 20; 
+
+ScavTrap::ScavTrap(void) : ClapTrap("defaulte_clap_name", ScavTrap::_defaultPv, ScavTrap::_defaultEn, ScavTrap::_defaultDomage)
 {
-    this->_nom = name;
-    this->_pv = 100;
-    this->_en = 50;
-    this->_domage = 20;
-    
-    std::cout << BLEU << "----------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << "ScavTrap : " << BLEU << "\tUn nouveau ninja vient d etre promu CHUNIN(" << this->_nom << ")" << BLANC << std::endl;
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name + "_clap_name", ScavTrap::_defaultPv, ScavTrap::_defaultEn, ScavTrap::_defaultDomage)
+{   
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
     std::cout << "ScavTrap : "<< BLEU << "\tUn nouveau ninja vient d etre promu CHUNIN(" << this->_nom << ")" << BLANC << std::endl;
-    std::cout << BLEU << "----------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
 }
 
 ScavTrap::~ScavTrap(void) 
 {
-    std::cout << BLEU << "--------------------------------------------------------" << BLANC << std::endl;
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
     std::cout << "ScavTrap : "<< BLEU << "\tUn Chunin nous a quitter...!" << BLANC << std::endl;
-    std::cout << BLEU << "--------------------------------------------------------" << BLANC << std::endl;
+    std::cout << BLEU << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
 }
 
 void    ScavTrap::guardGate(void)

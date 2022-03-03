@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:28:29 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/03 16:39:58 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:34:10 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,26 @@
 
 ClapTrap::ClapTrap(void)  : _nom(""), _pv(0), _en(0), _domage(0)
 {
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
     std::cout << "ClapTrap : " << VIOLET << "\tUn nouveau ninja sort de l ecole de formation! (" << this->_nom << ")" << BLANC << std::endl;
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
 }
 
 
 ClapTrap::ClapTrap(std::string name) : _nom(name), _pv(10), _en(10), _domage(0)
 {
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
-    std::cout << "ClapTrap : "<< VIOLET << "\tUn nouveau ninja sort de l ecole de formation!" << BLANC << std::endl;
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << "ClapTrap : "<< VIOLET << "\tUn nouveau ninja sort de l ecole de formation!(" << this->_nom << ")"<< BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name, int pv, int en, int domage) :
+    _nom(name), _pv(pv), _en(en), _domage(domage)
+{
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "\tUn nouveau ninja sort de l ecole de formation!(" << this->_nom << ")"<< BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+}
 
 ClapTrap::ClapTrap(ClapTrap &ori)
 {
@@ -44,10 +51,10 @@ ClapTrap::ClapTrap(ClapTrap &ori)
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
-    std::cout << "ClapTrap : "<< VIOLET << "\tUn ninja nous a quiter !" << BLANC << std::endl;
-    std::cout << VIOLET << "----------------------------------------------------" << BLANC << std::endl;
-    std::cout << VIOLET << "epitaphe : " << VIOLET << std::endl << this->_nom << "il c est battu pour la flame de konoha !" << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "\tUn ninja nous a quiter !(" << this->_nom << ")"<< BLANC << std::endl;
+    std::cout << VIOLET << "-----------------------------------------------------------------------------------" << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "epitaphe : " << VIOLET << std::endl << this->_nom << "il c est battu pour la flame de konoha !" << std::endl;
 }
 
 //-------------------Geter
@@ -90,10 +97,10 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &ori)
 //-------------------fonction membre
 void    ClapTrap::myPrintInfo(void)
 {
-    std::cout << "ClapTrap : "<< VIOLET << "nom    : " << VIOLET << this->_nom << BLANC << std::endl;
-    std::cout << "ClapTrap : "<< VIOLET << "Pv     : " << this->_pv << BLANC << std::endl;
-    std::cout << "ClapTrap : "<< VIOLET << "En     : " << this->_en << BLANC << std::endl;
-    std::cout << "ClapTrap : "<< VIOLET << "Domage : " << this->_domage << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "nom    : " << VIOLET << this->_nom << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "Pv     : " << this->_pv << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "En     : " << this->_en << BLANC << std::endl;
+    std::cout << "ClapTrap : " << VIOLET << "Domage : " << this->_domage << BLANC << std::endl;
 }
 
 void        ClapTrap::attack(const std::string& target)
