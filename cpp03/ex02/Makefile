@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/03/03 11:36:45 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/03 13:08:00 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			=	executable
 
 SRCS			=	srcs/main.cpp\
 					srcs/ClapTrap.cpp\
-					srcs/ScavTrap.cpp\
+					srcs/FragTrap.cpp\
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 
