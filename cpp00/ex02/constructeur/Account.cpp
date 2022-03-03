@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:55:23 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/11 15:08:09 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/03 18:55:06 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,5 @@ void	Account::_displayTimestamp(void)
 	time_t t = time(NULL);
 
 	strftime(tmp, (sizeof(tmp)),"%Y%m%d_%H%M%S", localtime(&t));
-	std::cout << "[" << tmp << "]b ";
+	std::cout << "[" << tmp << "] ";
 }

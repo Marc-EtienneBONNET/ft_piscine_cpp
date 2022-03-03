@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:41:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/02 20:44:25 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/03 18:51:51 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	Contact::my_modifi_contact(void)
 
 void	Contact::my_affichage_all(int index) const
 {
-	unsigned int x;
+	int x;
 	int y;
 	std::string tmp[4];
 
@@ -82,7 +82,7 @@ void	Contact::my_affichage_all(int index) const
 	while (y < 3)
 	{
 		x = 0;
-		while (10 - tmp[y].length() > x)
+		while ((int)(10 - tmp[y].length()) > x)
 		{
 			x++;
 			std::cout << " ";

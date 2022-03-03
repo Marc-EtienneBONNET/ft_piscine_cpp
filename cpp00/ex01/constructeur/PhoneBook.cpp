@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:18:22 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/28 13:59:15 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/03 18:54:20 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	PhoneBook::my_affiche_all_contact(void) const
 	while (1)
 	{
 		std::getline(std::cin, index_str);
-		if (index_str[0] >= '0' && index_str[0] <= '8')
+		if (index_str[0] >= '0' && index_str[0] < '8' && index_str[1] == '\0')
 		{
 			index = index_str[0] - '0';
 			if (index <= 7 && index < this->nb_contact)
