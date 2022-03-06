@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 18:19:03 by mbonnet          ###   ########.fr       */
+/*   Created: 2022/03/06 18:22:48 by mbonnet           #+#    #+#             */
+/*   Updated: 2022/03/06 20:08:18 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/my_define_include.hpp"
+#ifndef ICE_H
+# define ICE_H
+# include "AMateria.hpp"
 
-int	main(int ac, char **av)
+class Ice : public AMateria
 {
-	(void)ac;
-	(void)av;
+public :
+	Ice(void);
+	~Ice(void);
+	Ice &operator=(Ice &ori);
 
-	return (0);
-}
+	virtual AMateria *clone() const;
+    //virtual void use(ICharacter& target);
+};
+
+#endif

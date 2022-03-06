@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 18:19:03 by mbonnet          ###   ########.fr       */
+/*   Created: 2022/03/06 16:53:41 by mbonnet           #+#    #+#             */
+/*   Updated: 2022/03/06 17:55:05 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/my_define_include.hpp"
-
-int	main(int ac, char **av)
+class Brain
 {
-	(void)ac;
-	(void)av;
-
-	return (0);
-}
+public :
+	Brain(void);
+	~Brain(void);
+	Brain &operator=(Brain &ori);
+	std::string *getIdeas(void);
+	std::string ideas[100];
+protected : 
+private : 
+};

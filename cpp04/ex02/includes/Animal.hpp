@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 18:19:03 by mbonnet          ###   ########.fr       */
+/*   Created: 2022/03/06 10:23:14 by mbonnet           #+#    #+#             */
+/*   Updated: 2022/03/06 18:11:59 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/my_define_include.hpp"
-
-int	main(int ac, char **av)
+class Animal
 {
-	(void)ac;
-	(void)av;
-
-	return (0);
-}
+public : 
+	Animal(void);
+	Animal(std::string Type);
+	virtual ~Animal(void);
+	Animal &operator=(Animal &ori);
+	std::string 	getType(void);
+	virtual void	printType(void);
+	virtual void	makeSound(void) = 0;
+protected :
+	std::string type;
+};
