@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:44 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 12:13:01 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/06 12:19:20 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 
 //-------------------------constructeur/destructeur
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 {
-	std::cout << VERT << "Construction Animal" << BLANC << std::endl;
+	std::cout << BLEU << "Construction WrongAnimal" << BLANC << std::endl;
 }
 
-Animal::Animal(std::string Type) : type(Type)
+WrongAnimal::WrongAnimal(std::string Type) : type(Type)
 {
-	std::cout << VERT << "Construction Animal" << BLANC << std::endl;
+	std::cout << BLEU << "Construction WrongAnimal" << BLANC << std::endl;
 }
 
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << VERT << "Destruction Animal" << BLANC << std::endl;
+	std::cout << BLEU << "Destruction WrongAnimal" << BLANC << std::endl;
 }
 
 //-------------------------operator
-Animal &Animal::operator=(Animal &ori)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal &ori)
 {
 	this->type = ori.getType();
 	return (*this);
@@ -39,17 +39,17 @@ Animal &Animal::operator=(Animal &ori)
 
 //-------------------------Surcharge fonction
 
-std::string	Animal::getType(void)
+std::string	WrongAnimal::getType(void)
 {
 	return (this->type);
 }
 
-void	Animal::makeSound(void)
+void	WrongAnimal::makeSound(void)
 {
-	std::cout << VERT << "--defaulte animal--" << BLANC << std::endl;
+	std::cout << BLEU << "--defaulte animal--" << BLANC << std::endl;
 }
 
-void	Animal::printType(void)
+void	WrongAnimal::printType(void)
 {
-	std::cout << VERT << "Type : " << this->type << BLANC << std::endl;
+	std::cout << BLEU << "Type : " << this->type << BLANC << std::endl;
 }

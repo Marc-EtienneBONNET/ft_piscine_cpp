@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:23:14 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 12:12:20 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/06 12:15:28 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-class Animal
+class WrongAnimal
 {
 public : 
-	Animal(void);
-	Animal(std::string Type);
-	virtual ~Animal(void);
-	Animal &operator=(Animal &ori);
+	WrongAnimal(void);
+	WrongAnimal(std::string Type);
+	~WrongAnimal(void);
+	WrongAnimal &operator=(WrongAnimal &ori);
 	std::string 	getType(void);
-	virtual void	printType(void);
-	virtual void	makeSound(void);
+	void	printType(void);
+	void	makeSound(void);
 protected :
 	std::string type;
 };

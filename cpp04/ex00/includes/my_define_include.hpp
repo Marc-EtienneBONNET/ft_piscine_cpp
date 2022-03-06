@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 10:21:50 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/06 12:22:02 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "Animal.hpp"
 # include "Dog.hpp"
 # include "Cat.hpp"
+# include "WrongAnimal.hpp"
+# include "WrongCat.hpp"
 
 # define BLEU "\e[1;36m"
 # define BLEU_2 "\e[1;34m"
