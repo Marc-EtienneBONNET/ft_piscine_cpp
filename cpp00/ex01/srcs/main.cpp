@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 10:14:12 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 13:51:01 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(void)
 	{
 		std::cout << VIOLET "|\tPapi-Phone-->>" BLANC;
 		std::cin >> tmp;
+		if (std::cin.eof())
+			break ;
 		if (tmp == "ADD")
 			PhoneBook.my_ajoue_contact();
 		else if (tmp == "SEARCH")

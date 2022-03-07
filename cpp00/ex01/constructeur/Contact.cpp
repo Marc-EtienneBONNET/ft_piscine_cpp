@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:41:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 10:14:58 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 13:52:00 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,36 @@ void	Contact::my_modifi_contact(void)
 		{
 			std::cout << VIOLET "Le prenom      : " BLANC;
 			std::cin >>  this->prenom;
+			if (std::cin.eof())
+				break ;
 		}
 		if (!this->nom[0])
 		{
 			std::cout << VIOLET "Le nom         : " BLANC;
 			std::cin >>  this->nom;
+			if (std::cin.eof())
+				break ;
 		}
 		if (!this->surnom[0])
 		{
 			std::cout << VIOLET "Le surnom      : " BLANC;
 			std::cin >>  this->surnom;
+			if (std::cin.eof())
+				break ;
 		}
 		if (!this->num[0])
 		{
 			std::cout << VIOLET "Le num         : " BLANC;
 			std::cin >>  this->num;
+			if (std::cin.eof())
+				break ;
 		}
 		if (!this->dark_secret[0])
 		{
 			std::cout << VIOLET "Le noir secret : " BLANC;
 			std::cin >>  this->dark_secret;
+			if (std::cin.eof())
+				break ;
 		}
 	}
 }
