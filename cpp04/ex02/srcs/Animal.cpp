@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:44 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 17:47:46 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 09:47:26 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Animal::~Animal(void)
 }
 
 //-------------------------operator
-Animal &Animal::operator=(Animal &ori)
+Animal &Animal::operator=(Animal &ori) 
 {
 	this->type = ori.getType();
 	return (*this);

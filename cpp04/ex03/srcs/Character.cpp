@@ -6,11 +6,13 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:34:39 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 19:54:02 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 09:06:13 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/my_define_include.hpp"
+#include "../includes/my_define_include.hpp" 
+#include "../includes/Character.hpp"
+
 
 Character::Character(void)
 {

@@ -6,17 +6,16 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:22:51 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 20:01:33 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 09:03:58 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef CHARACTER_H
 # define CHARACTER_H
-# include "IMateriaSource.hpp"
+# include "my_define_include.hpp"
 # include "ICharacter.hpp"
-# include "Cure.hpp"
-# include "Ice.hpp"
-
+# include "AMateria.hpp"
 
 class Character : public ICharacter
 {
@@ -31,4 +30,5 @@ private :
 	std::string _name;
 	AMateria	*_materia[4];
 };
+
 #endif
