@@ -6,14 +6,14 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:19:25 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 09:08:24 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 10:57:37 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/my_define_include.hpp" 
 #include "../includes/Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) 
 {
 	this->_type = "ice";
 	std::cout << BLEU << "Construction Ice" << BLANC << std::endl;
@@ -35,7 +35,13 @@ Ice	&Ice::operator=(Ice &ori)
 	return (*this);
 }
 
+void Ice::test(void)
+{
+	std::cout << BLEU << "Test ice" << BLANC << std::endl;
+}
+
 void Ice::use(ICharacter& target)
 {
 	std::cout << BLEU << "* shoots an ice bolt at " << target.getName() << " *" << BLANC << std::endl;
 }
+

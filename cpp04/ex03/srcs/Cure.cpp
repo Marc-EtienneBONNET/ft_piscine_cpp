@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:19:29 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 09:08:08 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/07 10:32:57 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../includes/Cure.hpp"
 
 
-Cure::Cure(void) 
+Cure::Cure(void)  
 {
 	this->_type = "cure";
 	std::cout << ROUGE << "Construction Cure" << BLANC << std::endl;
@@ -34,6 +34,11 @@ Cure	&Cure::operator=(Cure &ori)
 {
 	this->_type = ori.getType();
 	return (*this);
+}
+
+void Cure::test(void)
+{
+	std::cout << BLEU << "Test Cure" << BLANC << std::endl;
 }
 
 void Cure::use(ICharacter& target)

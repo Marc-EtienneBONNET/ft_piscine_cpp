@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/03/07 08:21:41 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/07 13:15:49 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS			=	srcs/main.cpp\
 					srcs/Cure.cpp\
 					srcs/AMateria.cpp\
 					srcs/Character.cpp\
+					srcs/MateriaSource.cpp\
 					
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
@@ -25,7 +26,7 @@ HEAD			=	-I includes/
 
 CC				=	c++ 
 
-CFLAGS			=	-std=c++98 -Wall -Wextra -Werror
+CFLAGS			=	-std=c++98 -Wall -Wextra -Werror -g
 
 .cpp.o			:
 					${CC} ${CFLAGS} ${HEAD}  -c $< -o ${<:.cpp=.o} 
