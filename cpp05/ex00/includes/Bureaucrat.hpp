@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 08:36:23 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/08 10:06:44 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/08 11:05:59 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public :
     Bureaucrate         &operator=(Bureaucrate &ori);
     std::string const   getName(void) const;
     int                 getGrade(void) const;
+    void                incrementGrade(int nb);
+    void                decrementGrade(int nb);
 
     class Exepted : public std::exception
     {
@@ -54,5 +56,6 @@ private :
     int                 _grade;
 };
 
+std::ostream         &operator<<(std::ostream &o, Bureaucrate const &ori);
 
 #endif
