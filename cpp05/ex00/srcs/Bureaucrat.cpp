@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrate.cpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,81 +12,81 @@
 
 #include "../includes/Bureaucrat.hpp"
 
-Bureaucrate::Bureaucrate(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 
     if (grade > 150)
-        throw (Bureaucrate::GradeTooHighException());
+        throw (Bureaucrat::GradeTooHighException());
     else if (grade < 1)
-        throw (Bureaucrate::GradeTooLowException());
+        throw (Bureaucrat::GradeTooLowException());
     this->_grade = grade;
-    std::cout << "Const. de bureaucrate : " << this->_name  << std::endl;
+    std::cout << "Const. de Bureaucrat : " << this->_name  << std::endl;
 }
 
-Bureaucrate::Bureaucrate(Bureaucrate &ori) : _name(ori.getName()), _grade(ori.getGrade())
+Bureaucrat::Bureaucrat(Bureaucrat &ori) : _name(ori.getName()), _grade(ori.getGrade())
 {
-    std::cout << "Const. de bureaucrate : " << this->_name << std::endl;
+    std::cout << "Const. de Bureaucrat : " << this->_name << std::endl;
 }
 
-Bureaucrate::~Bureaucrate(void)
+Bureaucrat::~Bureaucrat(void)
 {
-    std::cout << "Dest. de bureaucrate : " << this->_name << std::endl;
+    std::cout << "Dest. de Bureaucrat : " << this->_name << std::endl;
 }
 
-Bureaucrate         &Bureaucrate::operator=(Bureaucrate &ori)
+Bureaucrat         &Bureaucrat::operator=(Bureaucrat &ori)
 {
     if (this != &ori)
         *this = ori;
     return (*this);
 }
 
-void                Bureaucrate::incrementGrade(int nb)
+void                Bureaucrat::incrementGrade(int nb)
 {
     if (this->_grade + nb > 150)
-        throw(Bureaucrate::GradeTooHighException());
+        throw(Bureaucrat::GradeTooHighException());
     if (this->_grade + nb < 1)
-        throw(Bureaucrate::GradeTooLowException());
+        throw(Bureaucrat::GradeTooLowException());
     this->_grade += nb;
 }
 
-void                Bureaucrate::decrementGrade(int nb)
+void                Bureaucrat::decrementGrade(int nb)
 {
     if (this->_grade - nb > 150)
-        throw(Bureaucrate::GradeTooHighException());
+        throw(Bureaucrat::GradeTooHighException());
     if (this->_grade - nb < 1)
-        throw(Bureaucrate::GradeTooLowException());
+        throw(Bureaucrat::GradeTooLowException());
     this->_grade -= nb;
 }
 
 
 
-std::string const   Bureaucrate::getName(void) const
+std::string const   Bureaucrat::getName(void) const
 {
     return (this->_name);
 }
 
-int   Bureaucrate::getGrade(void) const
+int   Bureaucrat::getGrade(void) const
 {
     return (this->_grade);
 }
 
-const char * Bureaucrate::Exepted::what() const throw()
+const char * Bureaucrat::Exepted::what() const throw()
 {
     return ("Exeption detecter!");
 }
 
-const char * Bureaucrate::GradeTooHighException::what() const throw()
+const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
     return ("ho ! tu t'es pris pour l'ermite Rikudo !");
 }
 
-const char * Bureaucrate::GradeTooLowException::what() const throw()
+const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Desoler, mais vous n avez pas le nivaux pour etre ninja...");
 }
 
 
-std::ostream        &operator<<(std::ostream &o, Bureaucrate const &ori)
+std::ostream        &operator<<(std::ostream &o, Bureaucrat const &ori)
 {
     (void)ori;
     o << ori.getName() << " a le grade " << ori.getGrade();
