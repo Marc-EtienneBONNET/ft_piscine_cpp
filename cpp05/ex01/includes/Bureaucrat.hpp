@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 08:36:23 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/08 11:28:51 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/08 17:20:14 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define JAUNE "\e[1;33m"
 # define VIOLET "\e[1;35m"
 # define BLANC "\e[0m"
+class Form;
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -33,6 +35,7 @@ public :
     int                 getGrade(void) const;
     void                incrementGrade(int nb);
     void                decrementGrade(int nb);
+    void                signForm(Form &ori);
 
     class Exepted : public std::exception
     {

@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp" 
+# include "../includes/Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
@@ -69,6 +70,20 @@ int   Bureaucrat::getGrade(void) const
 {
     return (this->_grade);
 }
+
+void                Bureaucrat::signForm(Form &ori)
+{
+    if (ori.getSign() == false)
+    {
+        if (ori.getGrade_sign() > this->_grade)
+            throw (Bureaucrat::GradeTooHighException());
+        std::cout << this->_name << " signe le formulaire : " << ori.getName() << std::endl;
+        ori.beSigned(*this);
+    }
+    else
+        std::cout << "Le formulaire " << ori.getName() << " est deja signe " << std::endl;
+}
+
 
 const char * Bureaucrat::Exepted::what() const throw()
 {

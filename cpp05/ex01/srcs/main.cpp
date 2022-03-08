@@ -6,100 +6,205 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/08 11:28:51 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/08 17:26:49 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+# include "../includes/Form.hpp"
+
 
 int	main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	std::cout << VERT << "---teste d init de Oroshimaru lvl 151 (res normale : Invalide)---" << BLANC << std::endl;
+	std::cout << VIOLET << "-------------------Test 1-------------------" << BLANC << std::endl;
+	std::cout << "test : " << VERT << "Valide" << BLANC << std::endl;
 	try
 	{
-		Bureaucrat Oroshimaru("Oroshimaru", 151);
-		std::cout << Oroshimaru << std::endl;
-		std::cout << VERT << "---incrementation---" << BLANC << std::endl;
-		Oroshimaru.incrementGrade(1);
-		std::cout << Oroshimaru << std::endl;
-		std::cout << VERT << "---decrementation---" << BLANC << std::endl;
-		Oroshimaru.decrementGrade(1);
-		std::cout << Oroshimaru << std::endl;
+		Form test("examin chunin", false, 40, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
 	}
-	std::cout << VERT << "-------------------fin du test Oroshimaru--------------------" << BLANC << std::endl << std::endl;
-		std::cout << VERT << "---teste d init de Konoamaru lvl -1 (res normale : Invalide)---" << BLANC << std::endl;
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+
+	std::cout << VIOLET << "-------------------Test 2-------------------" << BLANC << std::endl;
+	std::cout << "test : " << ROUGE << "Invalide " << BLANC << "(grade de signature invalide)" << std::endl;
 	try
 	{
-		Bureaucrat Konoamaru("Konoamaru", -1);
-		std::cout << Konoamaru << std::endl;
-		std::cout << VERT << "---incrementation---" << BLANC << std::endl;
-		Konoamaru.incrementGrade(1);
-		std::cout << Konoamaru << std::endl;
-		std::cout << VERT << "---decrementation---" << BLANC << std::endl;
-		Konoamaru.decrementGrade(1);
-		std::cout << Konoamaru << std::endl;
+		Form test("examin chunin", false, 151, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
 	}
-	std::cout << VERT << "-------------------fin du test Konoamaru--------------------" << BLANC << std::endl << std::endl;
-	std::cout << VERT << "---teste d init de Tsunade lvl 150 (res normale : Valide)---" << BLANC << std::endl;
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+	std::cout << VIOLET << "-------------------Test 3-------------------" << BLANC << std::endl;
+	std::cout << "test : " << ROUGE << "Invalide " << BLANC << "(grade d ex invalide)" << std::endl;
 	try
 	{
-		Bureaucrat Tsunade("Tsunade", 150);
-		std::cout << Tsunade << std::endl;
-		std::cout << VERT << "---incrementation---" << BLANC << std::endl;
-		Tsunade.incrementGrade(1);
-		std::cout << Tsunade << std::endl;
-		std::cout << VERT << "---decrementation---" << BLANC << std::endl;
-		Tsunade.decrementGrade(1);
-		std::cout << Tsunade << std::endl;
+		Form test("examin chunin", false, 40, 151);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
 	}
-	std::cout << VERT << "-------------------fin du test Tsunade--------------------" << BLANC << std::endl << std::endl;
-	std::cout << VERT << "---teste d init de Kakashi lvl 1 (res normale : Valide)---" << BLANC << std::endl;
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+
+	std::cout << VIOLET << "-------------------Test 4-------------------" << BLANC << std::endl;
+	std::cout << "test : " << VERT << "Valide " << BLANC << std::endl;
 	try
 	{
-		Bureaucrat Kakashi("Kakashi", 1);
-		std::cout << Kakashi << std::endl;
-		std::cout << VERT << "---incrementation---" << BLANC << std::endl;
-		Kakashi.incrementGrade(1);
-		std::cout << Kakashi << std::endl;
-		std::cout << VERT << "---decrementation---" << BLANC << std::endl;
-		Kakashi.decrementGrade(1);
-		std::cout << Kakashi << std::endl;
+		Form test("examin chunin", false, 40, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+		try
+		{
+			Bureaucrat Tsunade("Tsunade", 150);
+			std::cout << VERT << "----------Debrif de Bureaucrate---------"<< std::endl <<"Bureaucrat \t: " << Tsunade.getName() << std::endl << "Grade \t\t: " << Tsunade.getGrade() << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			try
+			{
+				test.beSigned(Tsunade);
+				std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << ROUGE << e.what() << BLANC << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << ROUGE << e.what() << BLANC << std::endl;
+		}
 	}
-	catch(const std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
 	}
-	std::cout << VERT << "-------------------fin du test Kakashi--------------------" << BLANC << std::endl << std::endl;
-		std::cout << VERT << "---teste d init de Kiba lvl 100 (res normale : Valide)---" << BLANC << std::endl;
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+	std::cout << VIOLET << "-------------------Test 5-------------------" << BLANC << std::endl;
+	std::cout << "test : " << ROUGE << "Invalide " << BLANC << "(Grade du bureaucrate insufisant)" << std::endl;
 	try
 	{
-		Bureaucrat Kiba("Kiba", 100);
-		std::cout << Kiba << std::endl;
-		std::cout << VERT << "---incrementation---" << BLANC << std::endl;
-		Kiba.incrementGrade(1);
-		std::cout << Kiba << std::endl;
-		std::cout << VERT << "---decrementation---" << BLANC << std::endl;
-		Kiba.decrementGrade(1);
-		std::cout << Kiba << std::endl;
+		Form test("examin chunin", false, 110, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+		try
+		{
+			Bureaucrat Naruto("Naruto", 100);
+			std::cout << VERT << "----------Debrif de Bureaucrate---------"<< std::endl <<"Bureaucrat \t: " << Naruto.getName() << std::endl << "Grade \t\t: " << Naruto.getGrade() << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			try
+			{
+				test.beSigned(Naruto);
+				std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << ROUGE << e.what() << BLANC << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << ROUGE << e.what() << BLANC << std::endl;
+		}
 	}
-	catch(const std::exception& e)
+	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
 	}
-	std::cout << VERT << "-------------------fin du test Kiba--------------------" << BLANC << std::endl << std::endl;
-	return (0);
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+	std::cout << VIOLET << "-------------------Test 6-------------------" << BLANC << "(utilisation de signForm())" << std::endl;
+	std::cout << "test : " << VERT << "Valide " << BLANC << std::endl;
+	try
+	{
+		Form test("examin chunin", false, 100, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+		try
+		{
+			Bureaucrat Naruto("Naruto", 100);
+			std::cout << VERT << "----------Debrif de Bureaucrate---------"<< std::endl <<"Bureaucrat \t: " << Naruto.getName() << std::endl << "Grade \t\t: " << Naruto.getGrade() << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			try
+			{
+				Naruto.signForm(test);
+				std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << ROUGE << e.what() << BLANC << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << ROUGE << e.what() << BLANC << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << ROUGE << e.what() << BLANC << std::endl;
+	}
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+	std::cout << VIOLET << "-------------------Test 7-------------------" << BLANC << std::endl;
+	std::cout << "test : " << ROUGE << "Invalide " << BLANC << "(utilisation de signForm() mais grade insufisant)" << std::endl;
+	try
+	{
+		Form test("examin chunin", false, 110, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+		try
+		{
+			Bureaucrat Naruto("Naruto", 100);
+			std::cout << VERT << "----------Debrif de Bureaucrate---------"<< std::endl <<"Bureaucrat \t: " << Naruto.getName() << std::endl << "Grade \t\t: " << Naruto.getGrade() << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			try
+			{
+				Naruto.signForm(test);
+				std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << ROUGE << e.what() << BLANC << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << ROUGE << e.what() << BLANC << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << ROUGE << e.what() << BLANC << std::endl;
+	}
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+std::cout << VIOLET << "-------------------Test 8-------------------" << BLANC << std::endl;
+	std::cout << "test : " << VERT << "Invalide " << BLANC << "(utilisation de signForm() mais document deja signer)" << std::endl;
+	try
+	{
+		Form test("examin chunin", true, 110, 40);
+		std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+		try
+		{
+			Bureaucrat Naruto("Naruto", 100);
+			std::cout << VERT << "----------Debrif de Bureaucrate---------"<< std::endl <<"Bureaucrat \t: " << Naruto.getName() << std::endl << "Grade \t\t: " << Naruto.getGrade() << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			try
+			{
+				Naruto.signForm(test);
+				std::cout << VERT << "----------Debrif de formulaire----------" << std::endl << test << std::endl << "-------------------fin------------------" << BLANC << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << ROUGE << e.what() << BLANC << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << ROUGE << e.what() << BLANC << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << ROUGE << e.what() << BLANC << std::endl;
+	}
+	std::cout << VIOLET << "---------------------Fin---------------------" << BLANC << std::endl << std::endl;
+
 }
