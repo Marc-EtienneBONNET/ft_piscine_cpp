@@ -6,11 +6,11 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 08:37:07 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/08 17:46:05 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/09 08:54:57 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Bureaucrat.hpp" 
+#include "../includes/Bureaucrat.hpp"  
 # include "../includes/AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)

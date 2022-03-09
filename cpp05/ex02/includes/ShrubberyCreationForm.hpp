@@ -14,11 +14,15 @@
 #define Shrubbery_H
 #include "AForm.hpp"
 
-class ShrubberyCreationAForm : public AForm
+class ShrubberyCreationForm : public AForm 
 {
 public :
+	ShrubberyCreationForm(std::string target); 
+	~ShrubberyCreationForm(void);
+    virtual void    execute(Bureaucrat const & executor);
 protected :
 private :
+	std::string _target;
 };
 
 #endif

@@ -14,11 +14,15 @@
 #define Robotomy_H
 #include "AForm.hpp"
 
-class RobotomyRequestAForm : public AForm
+class RobotomyRequestForm : public AForm 
 {
 public :
+	RobotomyRequestForm(std::string target); 
+	~RobotomyRequestForm(void);
+    virtual void    execute(Bureaucrat const & executor);
 protected :
 private :
+	std::string _target;
 };
 
 #endif

@@ -13,7 +13,7 @@
 #ifndef AForm_H
 #define AForm_H
 class Bureaucrat;
-#include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp" 
 
 class AForm
 {
@@ -26,6 +26,7 @@ public :
 	int					getGrade_ex(void);
 	void				beSigned(Bureaucrat &ori);
 	AForm				&operator=(AForm &ori);
+	virtual void    execute(Bureaucrat const & executor) = 0;
 	class Exepted : public std::exception
 	{
 		public : 
@@ -37,6 +38,11 @@ public :
 			virtual const char * what() const throw();
 	};
 	class GradeTooLowException : public AForm::Exepted
+	{
+		public : 
+			virtual const char * what() const throw();
+	};
+	class NoSignException : public AForm::Exepted
 	{
 		public : 
 			virtual const char * what() const throw();

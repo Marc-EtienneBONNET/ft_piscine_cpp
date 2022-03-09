@@ -12,15 +12,25 @@
 
 #include "../includes/PresidentialPardonForm.hpp"
 
-PresidentialPardonAForm::PresidentialPardonAForm(std::string &target)
-: _target(target), AForm("formulaire de pardon presidenciel", false, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
+: AForm("formulaire de pardon presidenciel", false, 25, 5), _target(target)
 {
-	std::cout << JAUNE <<"Le formulaire : " << this->getName() << " a etait creer" << BLANC << std::endl;
+	std::cout  <<"Le formulaire : " << this->getName() << " a etait creer"  << std::endl;
 }
 
-PresidentialPardonAForm::~PresidentialPardonAForm(void)
+PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-	std::cout << JAUNE << "Le formulaire : " << this->getName() << " a etait detruit" << BLANC << std::endl;
+	std::cout << "Le formulaire : " << this->getName() << " a etait detruit" << std::endl;
 }
+ 
 
-
+void    PresidentialPardonForm::execute(Bureaucrat const & executor)
+{
+    if (executor.getGrade() < this->getGrade_ex())
+        throw(AForm::GradeTooHighException());
+    if (this->getSign() == false)
+	{
+        throw(AForm::NoSignException());
+	}
+	std::cout << VERT << "Nous vous informons que M " << this->_target << " a etait gracier par le Hokage !" << BLANC << std::endl;
+}

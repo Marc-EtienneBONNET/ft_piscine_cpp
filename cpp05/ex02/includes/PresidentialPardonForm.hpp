@@ -14,14 +14,15 @@
 #define Presidential_H
 #include "AForm.hpp"
 
-class PresidentialPardonAForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 public :
-	PresidentialPardonAForm(std::string &target);
-	~PresidentialPardonAForm(void);
+	PresidentialPardonForm(std::string target); 
+	~PresidentialPardonForm(void);
+    virtual void    execute(Bureaucrat const & executor);
 protected :
 private :
-	std::string _target
+	std::string _target;
 };
 
 #endif

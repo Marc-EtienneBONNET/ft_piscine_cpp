@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/AForm.hpp" 
+# include "../includes/AForm.hpp"  
 
 AForm::AForm(std::string name, bool sign, int grade_sign, int grade_ex) : _name(name), _sign(sign), _grade_sign(grade_sign), _grade_ex(grade_ex)
 {
@@ -81,4 +81,9 @@ const char * AForm::GradeTooHighException::what() const throw()
 const char * AForm::GradeTooLowException::what() const throw()
 {
     return ("Desoler, mais vous n avez pas le nivaux pour etre ninja...");
+}
+
+const char * AForm::NoSignException::what() const throw()
+{
+    return ("Desoler, mais se formulaire n as pas etait signer...");
 }

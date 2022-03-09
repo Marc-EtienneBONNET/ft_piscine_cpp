@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/03/08 17:47:27 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/09 09:50:36 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ clean			:
 
 fclean			:	clean
 					rm -rf ${NAME}
+					rm -rf *_shrubbery
 
 re				:	fclean all
 
