@@ -52,7 +52,10 @@ void	AForm::beSigned(Bureaucrat &ori)
 	if (ori.getGrade() < this->_grade_sign)
 		throw (AForm::GradeTooLowException());
 	else
+	{
 		this->_sign = true;
+		std::cout << "signature effectuer par : " << ori.getName() << std::endl;
+	}
 }
 
 AForm			&AForm::operator=(AForm &ori)

@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/09 10:44:43 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/09 11:32:13 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	ShrubberyCreationForm b23("Benzay");
 	RobotomyRequestForm b24("Robocop");
 	PresidentialPardonForm b25("Sasuke");
-	Bureaucrat tsunade("Tsunade",150);
 	try
 	{
 		std::cout << BLEU << "Choisisez le nom de votre bureaucrate : " << BLANC << std::endl;
@@ -35,18 +34,26 @@ int	main(int ac, char **av)
 		std::cin >> grade; 
 		Bureaucrat gratepapier(name, grade);
 		std::cout << VIOLET << "---------------debut des verif de formulaire-------------------------" << BLANC << std::endl;
-		b23.beSigned(gratepapier);
-		b24.beSigned(gratepapier);
+		std::cout << JAUNE << "PresidentialPardonForm grade sign  : " << b25.getGrade_sign() << BLANC << std::endl; 
 		b25.beSigned(gratepapier);
-		b23.execute(gratepapier);
-		b24.execute(gratepapier);
+		std::cout << JAUNE << "RobotomyRequestForm grade sign     : " << b24.getGrade_sign() << BLANC << std::endl; 
+		b24.beSigned(gratepapier);
+		std::cout << JAUNE << "ShrubberyCreationForm grade sign   : " << b23.getGrade_sign() << BLANC << std::endl; 
+		b23.beSigned(gratepapier);
+		std::cout << std::endl;
+		std::cout << JAUNE << "PresidentialPardonForm grade ex    : " << b25.getGrade_ex() << BLANC << std::endl; 
 		b25.execute(gratepapier);
+		std::cout << JAUNE << "RobotomyRequestForm grade ex       : " << b24.getGrade_ex() << BLANC << std::endl; 
+		b24.execute(gratepapier);
+		std::cout << JAUNE << "ShrubberyCreationForm grade ex     : " << b23.getGrade_ex() << BLANC << std::endl; 
+		b23.execute(gratepapier);
+		std::cout << VIOLET << "-----------------------------fin--------------------------------------" << BLANC << std::endl;
 
 	}
 	catch (std::exception &e)
 	{
 		std::cout << ROUGE << e.what() << BLANC << std::endl;
+		std::cout << VIOLET << "-----------------------------fin--------------------------------------" << BLANC << std::endl;
 	}
-	std::cout << VIOLET << "-----------------------------fin--------------------------------------" << BLANC << std::endl;
 
 }
