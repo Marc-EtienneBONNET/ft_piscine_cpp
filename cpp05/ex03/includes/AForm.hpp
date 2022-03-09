@@ -19,7 +19,7 @@ class AForm
 {
 public :
 	AForm(std::string name, bool sign, int grade_sign, int grade_ex);
-	~AForm(void);
+	virtual ~AForm(void);
 	std::string 		getName(void);
 	bool				getSign(void);
 	int					getGrade_sign(void);

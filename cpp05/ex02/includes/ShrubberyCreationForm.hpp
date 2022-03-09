@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef Shrubbery_H
-#define Shrubbery_H
+#define Shrubbery_H 
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm 

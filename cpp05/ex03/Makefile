@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/03/09 17:08:39 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/09 16:52:57 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS			=	srcs/main.cpp\
 					srcs/ShrubberyCreationForm.cpp\
 					srcs/RobotomyRequestForm.cpp\
 					srcs/PresidentialPardonForm.cpp\
+					srcs/Intern.cpp\
 
 OBJS			=	${addprefix ,${SRCS:.cpp=.o}}
 
