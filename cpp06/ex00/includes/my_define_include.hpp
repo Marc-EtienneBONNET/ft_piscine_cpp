@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/10 17:31:29 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/15 10:15:39 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MY_DEFINE_INCLUDE_H
 # include <iostream>
 # include <string>
+# include <cmath>
 # include "Para.hpp"
 
 # define BLEU "\e[1;36m"
