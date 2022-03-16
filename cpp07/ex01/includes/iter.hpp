@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_define_include.hpp                              :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/02/09 16:10:42 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/16 19:05:15 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_DEFINE_INCLUDE_H
-# define MY_DEFINE_INCLUDE_H
+#ifndef ITER_HPP
+# define ITER_HPP
 # include <iostream>
 # include <string>
 
@@ -22,5 +22,9 @@
 # define JAUNE "\e[1;33m"
 # define VIOLET "\e[1;35m"
 # define BLANC "\e[0m"
+
+template<typename T>
+
+
 
 #endif
