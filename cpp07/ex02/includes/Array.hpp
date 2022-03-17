@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/17 14:07:40 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:25:38 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,18 @@ public :
     Array<T>(Array &ori);
     ~Array<T>(void);
     Array &operator=(Array &ori);
-    T               getTab(int index);
-    unsigned int    getSize(void);
+    T       operator[](unsigned int size);
+    T               getTab(unsigned int index);
+    unsigned int    size(void);
 protected :
 private : 
+    class invalideIndex : public std::exception
+    {
+        public : 
+			virtual const char * what() const throw();
+    };
     T               *tab;
-    unsigned int    size;
+    unsigned int    _size;
 };
 
 
