@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/16 19:05:15 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:57:36 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@
 # define BLANC "\e[0m"
 
 template<typename T>
+void    iter(T *tab, int size, void (*f)(T tab))
+{
+    for (int i = 0; i < size; i++)
+        (*f)(tab[i]);
+}
+
+template<typename T>
+void   f(T tab)
+{
+    std::cout << "contenu du tableau : " << tab << std::endl;
+}
+
+
 
 
 
