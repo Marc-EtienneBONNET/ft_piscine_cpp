@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/17 11:02:53 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:07:40 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 # include <iostream>
 # include <string>
 
@@ -24,16 +24,22 @@
 # define BLANC "\e[0m"
 
 template<typename T>
-void    iter(T *tab, int size, void (*f)(T tab))
+class Array
 {
-    for (int i = 0; i < size; i++)
-        (*f)(tab[i]);
-}
+public :
+    Array<T>(void);
+    Array<T>(unsigned int valeur);
+    Array<T>(Array &ori);
+    ~Array<T>(void);
+    Array &operator=(Array &ori);
+    T               getTab(int index);
+    unsigned int    getSize(void);
+protected :
+private : 
+    T               *tab;
+    unsigned int    size;
+};
 
-template<typename T>
-void   f(T tab)
-{
-    std::cout << "contenu du tableau : " << tab << std::endl;
-}
 
+#include "../template/Array.tpp"
 #endif
