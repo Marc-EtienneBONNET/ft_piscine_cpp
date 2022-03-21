@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:30 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 17:06:41 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 16:56:38 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,16 @@ void	Dog::makeSound(void)
 void	Dog::printType(void)
 {
 	std::cout << VIOLET << "type : " << this->type << BLANC << std::endl;
+}
+
+Dog::Dog(Dog &ori) 
+{
+	this->type = ori.getType();
+}
+
+Dog &Dog::operator=(Dog &ori)
+{
+	if (this != &ori)
+		*this = ori;
+	return (*this);
 }

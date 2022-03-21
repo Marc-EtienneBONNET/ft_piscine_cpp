@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:22:45 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 10:33:05 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:02:00 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Cure : public AMateria
 {
 public :
 	Cure(void);
+	Cure(Cure &ori);  
 	~Cure(void);
 	Cure &operator=(Cure &ori);
 

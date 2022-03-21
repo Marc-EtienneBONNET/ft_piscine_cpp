@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:34 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 12:13:08 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 16:50:08 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@ Cat::Cat(void)
 {
 	this->type = "Cat";
 	std::cout << ROUGE << "Construction Cat" << BLANC << std::endl;
+}
+
+Cat::Cat(Cat &ori) 
+{
+	this->type = ori.getType();
+}
+
+Cat &Cat::operator=(Cat &ori)
+{
+	if (this != &ori)
+		*this = ori;
+	return (*this);
 }
 
 Cat::~Cat(void)

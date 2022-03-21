@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:22:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 13:36:54 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:09:39 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class MateriaSource : public IMateriaSource
 {
 public:
     MateriaSource(void);
+    MateriaSource(MateriaSource &ori);
+    MateriaSource &operator=(MateriaSource &ori);
     virtual ~MateriaSource(void);
     virtual void learnMateria(AMateria*ori);
     virtual AMateria* createMateria(std::string const & type);

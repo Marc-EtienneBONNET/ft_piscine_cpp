@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:17:10 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 13:41:37 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:10:48 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,24 @@ MateriaSource::MateriaSource(void)
     std::cout << JAUNE << "Construction MateriaSource" << BLANC << std::endl;
 }
 
+MateriaSource::MateriaSource(MateriaSource &ori)
+{
+    (void)ori;
+    std::cout << JAUNE << "Construction MateriaSource" << BLANC << std::endl;
+}
+
 MateriaSource::~MateriaSource(void)
 {
     std::cout << JAUNE << "Destruction MateriaSource" << BLANC << std::endl;
 }
+
+MateriaSource &MateriaSource::operator=(MateriaSource &ori)
+{
+    if (this != &ori)
+        *this = ori;
+    return (*this);
+}
+
 
 void MateriaSource::learnMateria(AMateria*ori)
 {

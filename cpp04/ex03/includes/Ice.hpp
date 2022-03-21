@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:22:48 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 10:32:20 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:06:18 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Ice : public AMateria
 public :
 	Ice(void);
 	~Ice(void);
+	Ice(Ice &ori);
 	Ice &operator=(Ice &ori);
 
 	void 	test(void);

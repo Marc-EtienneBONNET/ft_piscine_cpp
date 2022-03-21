@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:19:25 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 10:57:37 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:07:42 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 Ice::Ice(void) 
 {
 	this->_type = "ice";
+	std::cout << BLEU << "Construction Ice" << BLANC << std::endl;
+}
+
+
+Ice::Ice(Ice &ori) 
+{
+	this->_type = ori.getType();
 	std::cout << BLEU << "Construction Ice" << BLANC << std::endl;
 }
 
