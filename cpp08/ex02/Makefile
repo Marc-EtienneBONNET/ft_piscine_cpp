@@ -6,7 +6,7 @@
 #    By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 13:05:15 by mbonnet           #+#    #+#              #
-#    Updated: 2022/02/11 16:25:49 by mbonnet          ###   ########.fr        #
+#    Updated: 2022/03/21 17:15:27 by mbonnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ $(NAME)			:	${OBJS}
 					${CC} ${CFLAGS} ${OBJS}  -o ${NAME} 
 
 all				:	${NAME}
+
+ex 				: $(NAME)
+					./$(NAME)
 
 clean			:
 					rm -rf ${OBJS}
