@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 17:50:48 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:33:08 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	while (y < x/2)
 		canope[y++] = new Cat();
 	while (y < x)
-		canope[y++] = new Cat();
+		canope[y++] = new Dog();
 
 	y = 0;
 	while (y < x)

@@ -6,12 +6,15 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:34:39 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/07 13:35:16 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:20:09 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/my_define_include.hpp" 
 #include "../includes/Character.hpp"
+#include "../includes/Ice.hpp"
+#include "../includes/Cure.hpp"
+
 
 
 Character::Character(void)
@@ -33,9 +36,15 @@ Character::Character(Character &ori)
 		this->_name = ori.getName();
 		for (int i = 0; i < 4; i++)
 		{
-			this->_materia[i] = ori.getMateria(i)->clone();
+			if (ori.getMateria(i)->getType() == "ice")
+				this->_materia[i] =  new Ice();
+			else if (ori.getMateria(i)->getType() == "cure")
+				this->_materia[i] =  new Cure();
 			if (ori.getMateria(i) == NULL)
+			{
+				this->_materia[i] = NULL;
 				break;
+			}
 		}
 		std::cout << VIOLET << "Construction Character" << BLANC << std::endl;
 	}
@@ -74,9 +83,13 @@ void Character::equip(AMateria* m)
 	{
 		this->_materia[x] = m;
 		this->_materia[x + 1] = NULL;
+		std::cout << "ft equip" << std::endl;
 	}
 	else
+	{
 		std::cout << VIOLET << "desoler mais " << this->getName() << " est plain" << BLANC << std::endl;
+		delete m;
+	}
 }
 
 void Character::unequip(int idx)

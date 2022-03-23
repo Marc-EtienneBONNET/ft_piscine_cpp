@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:56:33 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/06 17:57:19 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:37:23 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 Brain::Brain(void)
 {
+	std::cout << BLEU << "Construction Brain" << BLANC << std::endl;
+}
+
+Brain::Brain(Brain &ori)
+{
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = ori.getIdeas(i);
 	std::cout << BLEU << "Construction Brain" << BLANC << std::endl;
 }
 
@@ -32,7 +39,7 @@ Brain &Brain::operator=(Brain &ori)
 	return (*this);
 }
 
-std::string *Brain::getIdeas(void)
+std::string Brain::getIdeas(int index)
 {
-	return (this->ideas);
+	return (this->ideas[index]);
 }

@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:30 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 16:54:17 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:45:22 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,20 @@ void	Dog::printType(void)
 Dog::Dog(Dog &ori) 
 {
 	this->type = ori.getType();
+	if (this->cerveau)
+		delete this->cerveau;
+	this->cerveau = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->cerveau [i] = ori.cerveau[i];
 }
 
 Dog &Dog::operator=(Dog &ori)
 {
-	if (this != &ori)
-		*this = ori;
+	this->type = ori.getType();
+	if (this->cerveau)
+		delete this->cerveau;
+	this->cerveau = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->cerveau [i] = ori.cerveau[i];
 	return (*this);
 }

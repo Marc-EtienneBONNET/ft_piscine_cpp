@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 18:22:54 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 17:09:39 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:31:42 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     virtual ~MateriaSource(void);
     virtual void learnMateria(AMateria*ori);
     virtual AMateria* createMateria(std::string const & type);
+    AMateria *getMateria(int index) const;
 private : 
 	AMateria	*_materia[5];
 };

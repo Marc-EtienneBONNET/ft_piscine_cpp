@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:22:34 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 16:52:42 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:45:26 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,21 @@ Cat::Cat(void)
 Cat::Cat(Cat &ori) 
 {
 	this->type = ori.getType();
+	if (this->cerveau)
+		delete this->cerveau;
+	this->cerveau = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->cerveau [i] = ori.cerveau[i];
 }
 
 Cat &Cat::operator=(Cat &ori)
 {
-	if (this != &ori)
-		*this = ori;
+	this->type = ori.getType();
+	if (this->cerveau)
+		delete this->cerveau;
+	this->cerveau = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->cerveau [i] = ori.cerveau[i];
 	return (*this);
 }
 
