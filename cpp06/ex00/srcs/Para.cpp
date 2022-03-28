@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:12:16 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/15 12:50:14 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/03/28 22:47:03 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,41 +26,18 @@ Para::~Para(void)
 
 void		Para::takeType(void)
 {
-	int i;
-	if (this->_val[0] == '\'' && this->_val[2] == '\'' && this->_val[3] == '\0')
-	{
-		this->_type = 1;
-		return ;
-	}
-	if (this->_val != "-inf" && this->_val != "+inf" && this->_val != "inf" && this->_val != "nan" 
-		&& this->_val != "-inff" && this->_val != "+inff" && this->_val != "inff" && this->_val != "nanf")
-	{
-		for (i = 0; this->_val[i]; i++)
-		{
-			if ((this->_val[i] == '-' || this->_val[i] == '+') && i == 0)
-				continue ;
-			if ((this->_val[i] < '0' || this->_val[i] > '9') && this->_val[i] != '.' && this->_val[i] != 'f')
-			{
-				this->_type = 0;
-				return ;
-			}
-		}
-	}
-	for (i = 0; this->_val[i]; i++);
-	if (this->_val[i - 1] == 'f')
-	{
+	char *c;
+	double nb;
+	
+	nb = strtod(this->_val.c_str(), &c);
+	if (c[0] == '\0' && nb >= -2147483648 && nb <= 2147483647)
+		this->_type = 2;
+	else if (c[0] == 'f')
 		this->_type = 3;
-		return ;
-	}
-	for(int i = 0; this->_val[i]; i++)
-	{
-		if (this->_val[i] == '.' || this->_val == "-inf" || this->_val == "+inf" || this->_val == "inf" || this->_val == "nan")
-		{
-			this->_type = 4;
-			return ;
-		}
-	}
-	this->_type = 2;
+	else if (c[0] == '\0')
+		this->_type = 4;
+	else if (c[0] >= 32 && c[0] <= 127 && nb == 0 && c[1] == '\0')
+		this->_type = 1;
 }
 
 int ajoueZero(double nb)
@@ -98,7 +75,7 @@ void	Para::myPrint(void)
 
 void	Para::printChar(void)
 {
-	this->_Char = static_cast<char>(this->_val[1]);
+	this->_Char = static_cast<char>(this->_val[0]);
 	std::cout << VERT << "Char   : \'" << this->_Char << "\'"<< BLANC << std::endl;
 	std::cout << VERT << "Int    : " << static_cast<int>(this->_Char) << BLANC << std::endl;
 	std::cout << VERT << "Float  : " << static_cast<float>(this->_Char) << ".0f" << BLANC << std::endl;
@@ -107,65 +84,51 @@ void	Para::printChar(void)
 
 void	Para::printInt(void)
 {
-	this->_Int = atoi(this->_val.c_str());
+	char *c;
+	this->_Int = strtod(this->_val.c_str(), &c);
 	if (this->_Int >= 32 && this->_Int <= 127)
 		std::cout << VERT << "Char   : \'" << static_cast<char>(this->_Int) << "\'"<< BLANC << std::endl;
 	else 
 		std::cout << ROUGE << "Char   : non affichable..." << BLANC << std::endl;
-	std::cout << VERT << "Int    : " << static_cast<int>(this->_Int) << BLANC << std::endl;
-	std::cout << VERT << "Float  : " << static_cast<int>(this->_Int) << ".0f"<< BLANC << std::endl;
-	std::cout << VERT << "Double : " << static_cast<double>(this->_Int) << ".0" << BLANC << std::endl;
+	if (this->_Int <= 2147483647 && this->_Int >= -2147483648)
+		std::cout << VERT << "Int    : " << static_cast<int>(this->_Int) << BLANC << std::endl;
+	else
+		std::cout << VERT << "Int    : overflow" << BLANC << std::endl;
+	std::cout << VERT << "Float  : " << strtof(this->_val.c_str(), &c) << ".0f" << BLANC << std::endl;
+	std::cout << VERT << "Double : " << this->_Int << BLANC << std::endl;
 }
 
 
 void	Para::printFloat(void)
 {
-	this->_Float = atof(this->_val.c_str());
+	char *c;
+	this->_Float = strtod(this->_val.c_str(), &c);
 	if (this->_Float >= 32 && this->_Float <= 127)
 		std::cout << VERT << "Char   : \'" << static_cast<char>(this->_Float) << "\'"<< BLANC << std::endl;
 	else 
 		std::cout << ROUGE << "Char   : non affichable..." << BLANC << std::endl;
-	if (this->_inff == "" && this->_Float <= 2147483647 && this->_Float >= -2147483648)
+	if (this->_Float <= 2147483647 && this->_Float >= -2147483648)
 		std::cout << VERT << "Int    : " << static_cast<int>(this->_Float) << BLANC << std::endl;
-	else 
-		std::cout << ROUGE << "Int    : convertion impossible..." << BLANC << std::endl;
-	if (this->_inff != "")
-		std::cout << JAUNE << "Float  : " << this->_inff << BLANC << std::endl;
-	else if (ajoueZero(static_cast<double>(this->_Float)) != 1)
-		std::cout << VERT << "Float  : " << this->_Float << BLANC << std::endl;
 	else
-		std::cout << VERT << "Float  : " << this->_Float << ".0f"<< BLANC << std::endl;
-	if (this->_inf != "")
-		std::cout << JAUNE << "Double  : " << this->_inf << BLANC << std::endl;
-	else if (ajoueZero(this->_Float) != 1)
-		std::cout << VERT << "Double : " << static_cast<double>(this->_Float) << BLANC << std::endl;
-	else
-		std::cout << VERT << "Double : " << static_cast<double>(this->_Float) << ".0" << BLANC << std::endl;
+		std::cout << VERT << "Int    : overflow" << BLANC << std::endl; 
+	std::cout << VERT << "Float  : " << static_cast<float>(this->_Float) << "f" << BLANC << std::endl;
+	std::cout << VERT << "Double : " << this->_Float << BLANC << std::endl;
 }
 
 void	Para::printDouble(void)
 {
-	this->_Double = atof(this->_val.c_str());
+	char *c;
+	this->_Double = strtod(this->_val.c_str(), &c);
 	if (this->_Double >= 32 && this->_Double <= 127)
 		std::cout << VERT << "Char   : \'" << static_cast<char>(this->_Double) << "\'"<< BLANC << std::endl;
 	else 
 		std::cout << ROUGE << "Char   : non affichable..." << BLANC << std::endl;
-	if (this->_inff == "" && this->_Double <= 2147483647 && this->_Double >= -2147483648)
+	if (this->_Double <= 2147483647 && this->_Double >= -2147483648)
 		std::cout << VERT << "Int    : " << static_cast<int>(this->_Double) << BLANC << std::endl;
-	else 
-		std::cout << ROUGE << "Int    : convertion impossible..." << BLANC << std::endl;
-	if (this->_inff != "")
-		std::cout << JAUNE << "Float  : " << this->_inff << BLANC << std::endl;
-	else if (ajoueZero(static_cast<double>(this->_Double)) != 1)
-		std::cout << VERT << "Float  : " << this->_Double << "f" << BLANC << std::endl;
 	else
-		std::cout << VERT << "Float  : " << this->_Double << ".0f"<< BLANC << std::endl;
-	if (this->_inf != "")
-		std::cout << JAUNE << "Double  : " << this->_inf << BLANC << std::endl;
-	else if (ajoueZero(this->_Double) != 1)
-		std::cout << VERT << "Double1 : " << static_cast<double>(this->_Double) << BLANC << std::endl;
-	else
-		std::cout << VERT << "Double : " << static_cast<double>(this->_Double) << ".0" << BLANC << std::endl;
+		std::cout << VERT << "Int    : overflow" << BLANC << std::endl; 
+	std::cout << VERT << "Float  : " << static_cast<float>(this->_Double) << "f" << BLANC << std::endl;
+	std::cout << VERT << "Double : " << this->_Double << BLANC << std::endl;
 }
 
 
