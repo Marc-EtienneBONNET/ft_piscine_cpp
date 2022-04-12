@@ -6,20 +6,18 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/18 15:29:12 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/04/12 14:35:26 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/easyfind.hpp"
-
-#define TYPE int
 
 int	main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
 
-	std::list<TYPE> tab;
+	std::list<int> tab;
 	std::string nb;
 	tab.push_back(1);
 	tab.push_back(2);
@@ -40,7 +38,7 @@ int	main(int ac, char **av)
 			return (0);
 		try
 		{
-			easyfind<TYPE>(tab, std::atoi(nb.c_str()));
+			easyfind<std::list<int> >(tab, std::atoi(nb.c_str()));
 		}
 		catch (std::exception &e)
 		{

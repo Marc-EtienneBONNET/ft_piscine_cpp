@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 16:18:12 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/04/12 18:06:18 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define BLANC "\e[0m"
 
 template<typename T>
-class MutantStack : public  std::stack<T>
+class MutantStack : public std::stack<T>
 {
 public :
     MutantStack(void);

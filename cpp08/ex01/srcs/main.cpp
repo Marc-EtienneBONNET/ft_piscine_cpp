@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:09:38 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 14:23:39 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/04/12 18:04:11 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,22 @@ int	main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	std::string nb = "deb";
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << JAUNE << "The smallest gap : " << sp.shortestSpan() << BLANC << std::endl;
-	std::cout << JAUNE << "The biggest gap  : " << sp.longestSpan() << BLANC << std::endl;
 	try
 	{
+		std::string nb = "deb";
+		Span sp = Span(6);
+		std::vector<unsigned int> v;
+		v.push_back(10);
+		v.push_back(12);
+		v.push_back(16);
+		v.push_back(200);
+		sp.addNumber(100);
+		sp.addNumber(5);
+		sp.addNumber(v.begin(), v.end());
+		std::cout << JAUNE << "The smallest gap : " << sp.shortestSpan() << BLANC << std::endl;
+		std::cout << JAUNE << "The biggest gap  : " << sp.longestSpan() << BLANC << std::endl;
 		nb = "deb";
+		
 		std::cout << VIOLET << "choisisez la taille de votre tableau : " << BLANC;
 		std::cin >> nb;
 		Span test(std::atoi(nb.c_str()));

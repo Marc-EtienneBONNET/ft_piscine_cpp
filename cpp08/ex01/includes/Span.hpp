@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:08 by mbonnet           #+#    #+#             */
-/*   Updated: 2022/03/21 14:26:33 by mbonnet          ###   ########.fr       */
+/*   Updated: 2022/04/12 17:59:36 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <string>
 # include <list>
 # include <cstdlib>
+# include <cmath>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <list>
 
 
 # define BLEU "\e[1;36m"
@@ -32,10 +37,11 @@ public :
     Span(void);
     Span(unsigned nb);
     ~Span(void);
-    void                addNumber(unsigned int nb);
+    void               addNumber(unsigned int nb);
+    void               addNumber(std::vector<unsigned int>::const_iterator deb, std::vector<unsigned int>::const_iterator fin);
     unsigned int       shortestSpan(void);
     unsigned int       longestSpan(void);
-    std::list<unsigned int>    &getTab(void);
+    std::vector<unsigned int>    &getTab(void);
     Span       &operator=(Span &ori);
     class tooMuch : public std::exception
     {
@@ -54,7 +60,7 @@ public :
     };
 protected :
 private :
-    std::list<unsigned int>    tab;
+    std::vector<unsigned int>    tab;
     unsigned int               size_now; 
     unsigned int               size;  
 };
