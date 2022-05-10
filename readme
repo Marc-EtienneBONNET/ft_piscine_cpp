@@ -1,0 +1,50 @@
+Piscine-CPP C++
+
+I)  Module 00 :
+
+	Description
+		Ce premier module de C++ est fait pour vous aider à comprendre les spécificités du C++ par rapport au C.
+		C'est l'heure de plonger dans la programmation orientée objet !
+
+	les acquis
+		Namespace, class, member functions, stdio stream, initialization lists, static, const, et plein d’autres trucs basiques
+II) Module 01 :
+	
+	les acquis
+		Allocation mémoire, réference, pointeur membres, file streams
+III) Module 02 :
+
+	Description
+		Ce module aborde la notion de polymorphisme, et les opérateurs
+	les acquis
+		Polymorphisme ad-hoc, overloads et classes canoniques
+IV) Module 03 :
+
+	Description
+		Ce module aborde l'héritage en C++
+
+	les acquis
+		Héritage
+V) Module 04 :
+
+	Description
+		Polymorphisme de sous-type, classe abstraite et interfaces
+
+	les acquis
+		Polymorphisme sous-type, classes abstraites, interfaces
+VI) Module 05 :
+
+	les acquis
+		Repetition et Exceptions
+VII) Module 06 :
+
+	les acquis
+		C++ Casts
+VIII) Module 07 :
+
+	les acquis
+		c++ Templates
+IX)  Module 08 :
+
+	les acquis
+		Template de container, itérateurs, algorithmes
